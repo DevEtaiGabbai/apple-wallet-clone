@@ -1,4 +1,3 @@
-import { Main } from "next/document";
 import React from "react";
 
 const FinanceDetails = () => {
