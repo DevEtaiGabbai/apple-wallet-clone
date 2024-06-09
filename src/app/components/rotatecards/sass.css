@@ -1,0 +1,46 @@
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.486);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: background-color 1.5s ease;
+}
+
+.flip-card-inner {
+  display: grid;
+  width: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  grid-area: 1 / 1 / 2 / 2;
+  backface-visibility: hidden;
+  border-radius: 40px;
+}
+
+.flip-card-front {
+  color: white;
+  z-index: 1;
+}
+
+.flip-card-back {
+  color: black;
+  transform: rotateY(180deg); /* Default left-to-right flip */
+}
+
+.flipped {
+  transform: rotateY(180deg); /* Default left-to-right flip */
+}
+
+.flip-card-back-bottom-to-top {
+  transform: rotateX(180deg); /* Bottom-to-top flip */
+}
+
+.flipped-bottom-to-top {
+  transform: rotateX(180deg); /* Bottom-to-top flip */
+}

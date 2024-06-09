@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/sf-pro/SFPRODISPLAYREGULAR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.icon-container {
+  transition: transform 0.5s;
+  transform-origin: center;
+}
+
+.icon-container.rotate-45 {
+  transform: rotateX(180deg);
+}
+
+/* Ensure the dark overlay has a high z-index */
+/* Initial state of the overlay - hidden */
+
+.dark-overlay {
+  background-color: #000000c7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* Active state of the overlay - visible */
+.dark-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ensure other content has a lower z-index than the dark overlay */
+.other-content {
+  z-index: 998;
+  transition: all 1s ease;
+}
+
